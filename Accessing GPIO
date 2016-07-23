@@ -1,0 +1,9 @@
+Accessing GPIO Pins from the Shell in Debian
+(# refers to the GPIO# on the system, not necesarily the pin number on the board)
+1. Either become root or chmod the directory sys/class/gpio
+2. Navigate to sys/class/gpio and register the pin for use:   echo # > export 
+       Note: You don't know the # then take a look at GPIO-numebrs.html
+3. Navigate to sys/class/gpio/#: echo out > direction
+4. echo 1 > value
+5. The pin should now be HIGH on output.
+      To remove the GPIO pin from the GPIO directory, simply: echo # > unexport
